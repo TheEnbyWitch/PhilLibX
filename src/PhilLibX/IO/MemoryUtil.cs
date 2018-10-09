@@ -20,9 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // ------------------------------------------------------------------------
-// File: IO/IOExtensions.cs
+// File: IO/MemoryUtil.cs
 // Author: Philip/Scobalula
-// Description: IO Utilities/Extensions for reading null terminated strings, scanning files, etc.
+// Description: Utilities for Reading Process Memory
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;

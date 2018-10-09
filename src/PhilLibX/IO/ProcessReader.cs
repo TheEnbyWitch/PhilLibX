@@ -20,9 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // ------------------------------------------------------------------------
-// File: Printer.cs
+// File: IO/ProcessReader.cs
 // Author: Philip/Scobalula
-// Description: Class to Print stuff to the Console with more swag 🖨️
+// Description: A class to help with reading the memory of other processes.
 using System;
 using System.Diagnostics;
 
