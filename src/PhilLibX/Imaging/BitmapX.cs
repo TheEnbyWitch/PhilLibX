@@ -42,6 +42,7 @@ namespace PhilLibX.Imaging
         /// </summary>
         public static readonly int[] AcceptedBitsPerPixel =
         {
+            8,
             24,
             32,
         };
@@ -223,16 +224,31 @@ namespace PhilLibX.Imaging
             // Get Position of the Pixe, based off Bpp
             int pixelIndex = ((y * Width) + x) * BytesPerPixel;
 
-            // Convert to Color, only take Alpha if we're 32Bpp
-            Color result = Color.FromArgb(
-                // Alpha
-                BitsPerPixel == 32 ? Pixels[pixelIndex + 3] : 255,
-                // Red
-                Pixels[pixelIndex + 2],
-                // Green
-                Pixels[pixelIndex + 1],
-                // Blue
-                Pixels[pixelIndex]);
+            Color result;
+            if (BitsPerPixel != 8)
+            {
+                // Convert to Color, only take Alpha if we're 32Bpp
+                result = Color.FromArgb(
+                    // Alpha
+                    BitsPerPixel == 32 ? Pixels[pixelIndex + 3] : 255,
+                    // Red
+                    Pixels[pixelIndex + 2],
+                    // Green
+                    Pixels[pixelIndex + 1],
+                    // Blue
+                    Pixels[pixelIndex]);
+            } else
+            {
+                result = Color.FromArgb(
+                    // Alpha
+                    255,
+                    // Red
+                    Pixels[pixelIndex],
+                    // Green
+                    Pixels[pixelIndex],
+                    // Blue
+                    Pixels[pixelIndex]);
+            }
 
             // Ship back the result
             return result;
